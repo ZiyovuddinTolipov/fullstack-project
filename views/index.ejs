@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maktab O'quvchilari</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <table>
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>ismi</th>
+                    <th>familiya</th>
+                    <th>otasini ismi</th>
+                    <th>uy manzili</th>
+                    <th>Telefon Raqami</th>
+                    <!-- <th>O'chirish</th>
+                    <th>taxrirlash</th> -->
+                </tr>
+            </thead>
+            <tbody>
+                <%malumot.forEach((val)=>{%>
+                    <tr>
+                        <td>
+                            <%=val.id%>
+                        </td>
+                        <td>
+                            <%=val.ismi%>
+                        </td>
+                        <td>
+                            <%=val.familiya%>
+                        </td>
+                        <td>
+                            <%=val.otasini_ismi%>
+                        </td>
+                        <td>
+                            <%=val.uy_manzili%>
+                        </td>
+                        <td>
+                            <%=val.telefon_raqami%>
+                        </td>
+                        <!-- <td>
+                            <button onclick='del("<%=val.id%>")'>O'chirish</button>
+                        </td>
+                        <td>
+                            <span><a href="/edit/<%=val.id%>">Taxrirlash</a></span>
+                        </td> -->
+                    </tr>
+                    <%})%>
+
+
+            </tbody>
+        </table>
+
+    </div>
+
+    <script>
+        function del(id) {
+            var d = confirm("O`chirish")
+            if (d) {
+                window.location.assign(`/del/${id}`)
+            } else {
+                window.location.assign("/")
+            }
+        }
+    </script>
+</body>
+
+</html>
